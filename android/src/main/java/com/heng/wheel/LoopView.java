@@ -68,7 +68,7 @@ public class LoopView extends View {
 
     final int DEFAULT_SELECTED_INDEX = 0;
 
-    final int DEFAULT_TEXT_SIZE = 21;
+    final int DEFAULT_TEXT_SIZE = 16;
 
     boolean isLoop = DEFAULT_IS_LOOP;
 
@@ -114,18 +114,21 @@ public class LoopView extends View {
     }
 
     private void initPaints() {
+        
+        Typeface custom_font = Typeface.createFromAsset(context.getAssets(),  "fonts/helvetica_neue_medium.otf");
+        
         paintOuterText = new Paint();
         paintOuterText.setColor(colorGray);
         paintOuterText.setAntiAlias(true);
         paintOuterText.setTextAlign(Paint.Align.CENTER);
-        paintOuterText.setTypeface(Typeface.MONOSPACE);
+        paintOuterText.setTypeface(custom_font);
 
         paintCenterText = new Paint();
         paintCenterText.setColor(colorBlack);
         paintCenterText.setAntiAlias(true);
-        paintCenterText.setTextScaleX(1.05F);
+        paintCenterText.setTextScaleX(1.00F);
         paintCenterText.setTextAlign(Paint.Align.CENTER);
-        paintCenterText.setTypeface(Typeface.MONOSPACE);
+        paintCenterText.setTypeface(custom_font);
 
         paintIndicator = new Paint();
         paintIndicator.setColor(colorLightGray);
