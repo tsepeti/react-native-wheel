@@ -1,6 +1,6 @@
 {
   "name": "react-native-wheel",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "android wheel view for react-native",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,7 @@
   },
   "homepage": "https://github.com/shexiaoheng/react-native-wheel#readme",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "prop-types": "15.6.0"
+  }
 }
