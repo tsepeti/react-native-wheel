@@ -47,9 +47,9 @@ public class LoopView extends View {
 
     int maxTextHeight;
     int colorGray = 0xffafafaf;
-    int colorBlack = 0xff313131;
+    int colorDarkBlue = 0xff1F4F87;
 
-    int colorLightGray = 0xffc5c5c5;
+    int colorLightBlue= 0xff3177CA;
 
     float lineSpacingMultiplier;
 
@@ -115,7 +115,7 @@ public class LoopView extends View {
 
     private void initPaints() {
         
-        Typeface custom_font = Typeface.createFromAsset(context.getAssets(),  "fonts/helvetica_neue_medium.otf");
+        Typeface custom_font = Typeface.createFromAsset(context.getAssets(),  "fonts/Adelle-Sans-Regular.ttf");
         
         paintOuterText = new Paint();
         paintOuterText.setColor(colorGray);
@@ -124,14 +124,14 @@ public class LoopView extends View {
         paintOuterText.setTypeface(custom_font);
 
         paintCenterText = new Paint();
-        paintCenterText.setColor(colorBlack);
+        paintCenterText.setColor(colorDarkBlue);
         paintCenterText.setAntiAlias(true);
         paintCenterText.setTextScaleX(1.00F);
         paintCenterText.setTextAlign(Paint.Align.CENTER);
         paintCenterText.setTypeface(custom_font);
 
         paintIndicator = new Paint();
-        paintIndicator.setColor(colorLightGray);
+        paintIndicator.setColor(colorLightBlue);
         paintIndicator.setAntiAlias(true);
 
         if (android.os.Build.VERSION.SDK_INT >= 11) {
