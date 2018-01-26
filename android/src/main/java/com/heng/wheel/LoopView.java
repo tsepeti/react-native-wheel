@@ -303,12 +303,17 @@ public class LoopView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         boolean eventConsumed = gestureDetector.onTouchEvent(event);
         float itemHeight = lineSpacingMultiplier * maxTextHeight;
+
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 startTime = System.currentTimeMillis();
                 cancelFuture();
                 previousY = event.getRawY();
+                if (getParent() != null) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
                 break;
+
             case MotionEvent.ACTION_MOVE:
                 float dy = previousY - event.getRawY();
                 previousY = event.getRawY();
@@ -328,6 +333,7 @@ public class LoopView extends View {
                 break;
 
             case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
             default:
                 if (!eventConsumed) {
                     float y = event.getY();
@@ -343,8 +349,12 @@ public class LoopView extends View {
                         smoothScroll(ACTION.CLICK);
                     }
                 }
+                if (getParent() != null) {
+                    getParent().requestDisallowInterceptTouchEvent(false);
+                }
                 break;
         }
+
         invalidate();
         return true;
     }
