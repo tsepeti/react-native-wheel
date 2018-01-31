@@ -45,6 +45,8 @@ dependencies {
 // file: android/src/main/java/com.xx/MainApplication.java
 ...
 
+import com.heng.wheel.WheelPackage;
+
 private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
         protected boolean getUseDeveloperSupport() {
